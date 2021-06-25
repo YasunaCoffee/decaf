@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //   child: Padding(
             //     padding: const EdgeInsets.all(20.0),
             //     child: Container(
-            //       child: Text('おいしいデカフェをたのしむために',
+            //       child: Text('おいしデカフェをたのしむために',
             //           style: GoogleFonts.sawarabiMincho()),
             //     ),
             //   ),
