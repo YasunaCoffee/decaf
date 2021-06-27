@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: 'Find Your Coffee Shop'),
         'details': (context) => Details(),
       },
-      theme: ThemeData(
-        primarySwatch: Colors.brown,
-      ),
+      theme: ThemeData(primaryColor: Colors.white),
     );
   }
 }
@@ -38,13 +36,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: SizedBox(
-          child: Text('mama coffee', style: GoogleFonts.dokdo(fontSize: 50)),
-        ),
-        toolbarHeight: 60,
+        actions: [FaIcon(FontAwesomeIcons.bars)],
+        toolbarHeight: 100,
+        title: SizedBox(child: Image.asset('images/coffeescale.JPG')
+            // Text('mama coffee', style: GoogleFonts.biryani(fontSize: 25.0)),
+            ),
       ),
+      backgroundColor: Colors.white,
       body: Scrollbar(
         child: ListView(
+          scrollDirection: Axis.vertical,
           children: [
             // Center(
             //   child: Padding(
@@ -79,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
                     textStyle: TextStyle(fontSize: 15.0),
-                    primary: Colors.teal,
+                    primary: Colors.pink[100],
                     onPrimary: Colors.white,
                   ),
                   onPressed: () {
@@ -125,75 +126,70 @@ class _MyHomePageState extends State<MyHomePage> {
               thickness: 2,
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  elevation: 50,
-                  shadowColor: Colors.black,
-                  color: Colors.white,
-                  child: SizedBox(
-                    width: 230,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.white38,
-                            radius: 58,
-                            child: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  "https://i2.wp.com/exhibit-at.com/wp-content/uploads/2014/04/maruyama-coffee-logo.png?w=350&ssl=1"), //NetworkImage
-                              radius: 50,
-                            ), //CircleAvatar
-                          ), //CirclAvatar
-                          SizedBox(
-                            height: 10,
-                          ), //SizedBox
-                          Text('MARUYAMA COFFEE',
-                              style: GoogleFonts.sawarabiMincho()
-                              //Textstyle
-                              ), //Text
-//SizedBox
-                        ],
-                      ), //Column
-                    ), //Padding
-                  ), //SizedBox
-                ),
-                Card(
-                  elevation: 50,
-                  shadowColor: Colors.black,
-                  color: Colors.white,
-                  child: SizedBox(
-                    width: 230,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.white38,
-                            radius: 58,
-                            child: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  "https://i2.wp.com/exhibit-at.com/wp-content/uploads/2014/04/maruyama-coffee-logo.png?w=350&ssl=1"), //NetworkImage
-                              radius: 50,
-                            ), //CircleAvatar
-                          ), //CirclAvatar
-                          SizedBox(
-                            height: 10,
-                          ), //SizedBox
-                          Text('MARUYAMA COFFEE',
-                              style: GoogleFonts.sawarabiMincho()
-                              //Textstyle
-                              ), //Text
-                          //Textstyle
-                          //Text
-                        ],
-                      ), //Column
-                    ), //Padding
-                  ), //SizedBox
-                ),
-              ],
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    color: Colors.white,
+                    elevation: 10,
+                    child: SizedBox(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            // Image.asset('images/coffeebean.JPG'),
+                            FaIcon(
+                              FontAwesomeIcons.bookOpen,
+                              size: 50.0,
+                            ),
+                            //SizedBox
+                            Text('コーヒーの淹れ方',
+                                style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                                //Textstyle
+                                ), //Text
+                            //Textstyle
+                            //Text
+                          ],
+                        ), //Column
+                      ), //Padding
+                    ), //SizedBox
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Card(
+                    elevation: 10,
+                    color: Colors.white,
+                    child: SizedBox(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.bookOpen,
+                              size: 50.0,
+                            ),
+                            //SizedBox
+                            Text('コーヒーの淹れ方',
+                                style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                                //Textstyle
+                                ), //Text
+                            //Textstyle
+                            //Text
+                          ],
+                        ), //Column
+                      ), //Padding
+                    ), //SizedBox
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
