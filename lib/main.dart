@@ -37,81 +37,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [FaIcon(FontAwesomeIcons.bars)],
-        toolbarHeight: 100,
-        title: SizedBox(child: Image.asset('images/coffeescale.JPG')
-            // Text('mama coffee', style: GoogleFonts.biryani(fontSize: 25.0)),
-            ),
+        toolbarHeight: MediaQuery.of(context).size.height * 0.17,
+        title: SizedBox(child: Image.asset('images/mamacoffee.png')),
       ),
       backgroundColor: Colors.white,
       body: Scrollbar(
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            // Center(
-            //   child: Padding(
-            //     padding: const EdgeInsets.all(20.0),
-            //     child: Container(
-            //       child: Text('おいしデカフェをたのしむために',
-            //           style: GoogleFonts.sawarabiMincho()),
-            //     ),
-            //   ),
-            // ),
-            // TextField(
-            //   decoration: InputDecoration(
-            //     border: OutlineInputBorder(),
-            //     labelText: 'Shop Name',
-            //     suffixIcon: IconButton(
-            //       icon: FaIcon(FontAwesomeIcons.search),
-            //       onPressed: () {
-            //         print('hello');
-            //       },
-            //     ),
-            //   ),
-            // ),
-            SizedBox(
-              height: 15.0,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  child: const Text('コーヒー'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
-                    textStyle: TextStyle(fontSize: 15.0),
-                    primary: Colors.pink[100],
-                    onPrimary: Colors.white,
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'details');
-                  },
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  child: const Text(''),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
-                    textStyle: TextStyle(fontSize: 15.0),
-                    primary: Colors.white,
-                    onPrimary: Colors.black,
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'map');
-                  },
-                ),
-              ],
-            ),
-
             SizedBox(
               height: 20.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FaIcon(FontAwesomeIcons.coffee),
+                FaIcon(FontAwesomeIcons.heart),
                 SizedBox(width: 6),
                 Text(
                   '人気記事',
@@ -189,6 +129,175 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    color: Colors.white,
+                    elevation: 10,
+                    child: SizedBox(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            //SizedBox
+                            FaIcon(
+                              FontAwesomeIcons.bookOpen,
+                              size: 50.0,
+                            ),
+                            Text('コーヒーの淹れ方',
+                                style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                                //Textstyle
+                                ), //Text
+                            //Textstyle
+                            //Text
+                          ],
+                        ), //Column
+                      ), //Padding
+                    ), //SizedBox
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Card(
+                    elevation: 10,
+                    color: Colors.white,
+                    child: SizedBox(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.bookOpen,
+                              size: 50.0,
+                            ),
+                            //SizedBox
+                            Text('コーヒーの淹れ方',
+                                style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                                //Textstyle
+                                ), //Text
+                            //Textstyle
+                            //Text
+                          ],
+                        ), //Column
+                      ), //Padding
+                    ), //SizedBox
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FaIcon(FontAwesomeIcons.rss),
+                SizedBox(width: 6),
+                Text(
+                  '新着記事',
+                  style: GoogleFonts.kosugiMaru(),
+                ),
+              ],
+            ),
+            Divider(
+              indent: 150,
+              endIndent: 150,
+              color: Colors.black,
+              thickness: 2,
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Card(
+                color: Colors.white,
+                elevation: 10,
+                child: SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        FittedBox(child: Image.asset('images/coffeemill.JPG')),
+                        //SizedBox
+                        Text('コーヒーの淹れ方',
+                            style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                            //Textstyle
+                            ), //Text
+                        //Textstyle
+                        //Text
+                      ],
+                    ), //Column
+                  ), //Padding
+                ), //SizedBox
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Card(
+                color: Colors.white,
+                elevation: 10,
+                child: SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        FittedBox(child: Image.asset('images/coffeebean.JPG')),
+
+                        //SizedBox
+                        Text('コーヒーの淹れ方',
+                            style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                            //Textstyle
+                            ), //Text
+                        //Textstyle
+                        //Text
+                      ],
+                    ), //Column
+                  ), //Padding
+                ), //SizedBox
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Card(
+                color: Colors.white,
+                elevation: 10,
+                child: SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        FittedBox(child: Image.asset('images/coffeescale.JPG')),
+
+                        //SizedBox
+                        Text('コーヒーの淹れ方',
+                            style: GoogleFonts.kosugiMaru(fontSize: 10.0)
+                            //Textstyle
+                            ), //Text
+                        //Textstyle
+                        //Text
+                      ],
+                    ), //Column
+                  ), //Padding
+                ), //SizedBox
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FaIcon(FontAwesomeIcons.instagram),
+                SizedBox(width: 6),
+                Text(
+                  'SNS',
+                  style: GoogleFonts.kosugiMaru(),
+                ),
+              ],
+            ),
+            Divider(
+              indent: 150,
+              endIndent: 150,
+              color: Colors.black,
+              thickness: 2,
               height: 20,
             ),
           ],
